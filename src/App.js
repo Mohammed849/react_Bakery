@@ -12,9 +12,9 @@ class App extends React.Component {
       activeTab: 'pay',
       items: [],
     };
-    this.onClickTabAdd = this.onClickTabAdd.bind();
-    this.onClickTabList = this.onClickTabList.bind();
-    this.onClickTabPay = this.onClickTabPay.bind();
+    this.onClickTabAdd = this.onClickTabAdd.bind(this);
+    this.onClickTabList = this.onClickTabList.bind(this);
+    this.onClickTabPay = this.onClickTabPay.bind(this);
   }
 
   onClickTabAdd() {
@@ -46,6 +46,9 @@ class App extends React.Component {
     return null;
   }
   renderPay() {
+    if (this.state.activeTab === 'Pay') {
+      return <Pay />;
+    }
     return null;
   }
 
