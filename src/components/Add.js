@@ -9,21 +9,22 @@ class Add extends React.Component {
       min: 1,
       max: 10,
     };
+    this.moveChangeSlider = this.moveChangeSlider.bind(this);
+  }
+  moveChangeSlider(val) {
+    console.log(val);
+    this.setState({
+      price: val,
+    });
   }
 
   render() {
     return (
       <div className='container-fluid'>
-        <div class='input-group mb-3'>
-          <input
-            type='text'
-            class='form-control'
-            placeholder='item'
-            aria-label='item'
-            aria-des
-          />
-          <div class='input-group-append'>
-            <button class='btn btn-outline-primary' type='button'>
+        <div className='input-group mb-3'>
+          <input type='text' className='form-control' placeholder='item' />
+          <div className='input-group-append'>
+            <button className='btn btn-outline-primary' type='button'>
               Add
             </button>
           </div>
@@ -33,7 +34,7 @@ class Add extends React.Component {
             min={this.state.min}
             max={this.state.max}
             value={this.state.price}
-            onChange={this.props.onChange}
+            onChange={this.moveChangeSlider}
           />
         </div>
       </div>
